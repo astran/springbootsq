@@ -1,0 +1,16 @@
+server.port: 8088
+server.servlet.context-path: /demo
+name: aty
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sqtest
+    data-username: root
+    data-password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
