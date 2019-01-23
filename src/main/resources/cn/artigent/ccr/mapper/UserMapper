@@ -22,4 +22,20 @@
     <delete id="delete" parameterType="int">
         DELETE from user where id=#{id}
     </delete>
+    <select id="findOne" resultMap="userResultMap" parameterType="int">
+        SELECT * FROM user where id = #{id}
+    </select>
+    <resultMap id="userResultMap" type="User">
+        <id property="id" column="id"/>
+        <result property="Account" column="Account"/>
+        <result property="Is_Active" column="Is_Active"/>
+        <result property="Password" column="Password"/>
+        <result property="user_type" column="user_type"/>
+        <result property="user_Id" column="user_Id"/>
+        <association property="role" javaType="cn.artigent.ccr.domain.Role">
+            <id property="id" column="id"/>
+            <result property="roleName" column="RoleName"/>
+            <result property="permissionLevel" column="PermissionLevel"/>
+        </association>
+    </resultMap>
 </mapper>
